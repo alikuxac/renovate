@@ -1,0 +1,22 @@
+name: Renovate Configure
+id: 'ari:cloud:compass:6ed66c71-0090-45d3-8650-b6209b9cd18e:component/cff34412-74bc-4fa6-bbb2-0067723aa3c4/5061e0a5-581b-4dbb-8c98-22291e9b578f'
+description: Renovate bot Configure
+configVersion: 1
+typeId: OTHER
+ownerId: null
+fields:
+  lifecycle: Active
+  tier: 1
+links:
+  - name: null
+    type: REPOSITORY
+    url: 'https://github.com/alikuxac/renovate'
+  - name: Main Docs
+    type: DOCUMENT
+    url: 'https://docs.renovatebot.com/'
+relationships: {}
+labels: null
+customFields: null
+
+# Learn more about formatting compass.yml:
+# https://go.atlassian.com/compass-yml-format
