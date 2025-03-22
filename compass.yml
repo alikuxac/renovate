@@ -3,9 +3,10 @@ id: 'ari:cloud:compass:6ed66c71-0090-45d3-8650-b6209b9cd18e:component/cff34412-7
 description: Renovate bot Configure
 configVersion: 1
 typeId: OTHER
-ownerId: null
+ownerId: 'ari:cloud:identity::team/f2e5a4d4-e980-428f-ba4d-6e13fc53a778'
 fields:
-  lifecycle: Active
+  isMonorepoProject: false
+  lifecycle: Deprecated
   tier: 1
 links:
   - name: null
@@ -14,8 +15,12 @@ links:
   - name: Main Docs
     type: DOCUMENT
     url: 'https://docs.renovatebot.com/'
+  - name: ''
+    type: PROJECT
+    url: 'https://alikuxac.atlassian.net/browse/AIO'
 relationships: {}
-labels: null
+labels:
+  - dev-tools
 customFields: null
 
 # Learn more about formatting compass.yml:
