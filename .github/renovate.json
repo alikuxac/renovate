@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>alikuxac/renovate:fully-automated-repository"]
+  "extends": ["github>alikuxac/renovate:fully-automated"]
 }
