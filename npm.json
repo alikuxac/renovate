@@ -1,0 +1,73 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "npm": {
+    "packageRules": [
+      {
+        "description": "Automerge dependencies with built-in type definitions",
+        "matchPackageNames": ["@types/node", "@cloudflare/workers-types"],
+        "extends": ["github>alikuxac/renovate:automerge"]
+      },
+      {
+        "description": "Automerge patches",
+        "matchDepTypes": ["minor", "patch"],
+        "matchCurrentVersion": "!/^0/",
+        "automerge": true
+      },
+      {
+        "description": "Disable engines updates",
+        "matchDepTypes": ["engines"],
+        "enabled": false
+      },
+      {
+        "description": "Automerge linting and testing dependency upgrades",
+        "extends": [
+          "packages:linters",
+          "packages:test",
+          "github>alikuxac/renovate:automerge"
+        ]
+      },
+      {
+        "description": "Group React dependencies",
+        "matchPackagePrefixes": ["react", "@types/react"],
+        "groupName": "React"
+      },
+      {
+        "description": "Group testing dependencies",
+        "extends": ["packages:test"],
+        "groupName": "testing"
+      },
+      {
+        "description": "Group mongoose",
+        "matchPackageNames": ["mongoose"],
+        "groupName": "mongoose"
+      },
+      {
+        "description": "Group NestJS dependencies",
+        "matchPackageNames": ["@nestjs"],
+        "groupName": "NestJS"
+      },
+      {
+        "description": "Automerge patch and minor updates for typescript",
+        "matchPackageNames": ["typescript"],
+        "matchUpdateTypes": ["patch", "minor"],
+        "extends": ["github>alikuxac/renovate:automerge"]
+      },
+      {
+        "description": "Do not automerge major updates for typescript",
+        "matchPackageNames": ["typescript"],
+        "matchUpdateTypes": ["major"],
+        "automerge": false
+      },
+      {
+        "description": "Avoid pinning peer dependencies",
+        "matchDepTypes": ["peerDependencies"],
+        "rangeStrategy": "bump"
+      },
+      {
+        "description": "Automerge node version",
+        "matchManagers": ["nvm"],
+        "extends": ["github>alikuxac/renovate:automerge"]
+      }
+    ]
+  }
+}

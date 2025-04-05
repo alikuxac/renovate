@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Manage Discord packages versions. Use `:discord`",
+
+  "packageRules": [
+    {
+      "description": "Discord.js dependecies",
+      "matchPackageNames": ["discord.js"],
+      "groupName": "Discord.js"
+    },
+    {
+      "description": "Discord.js related packages",
+      "matchPackageNames": ["@discordjs"],
+      "groupName": "Discord.js Related"
+    },
+    {
+      "description": "Disable discord-api-types updates",
+      "matchPackagePatterns": ["discord-api-types"],
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Enforces consistent Node versions across a repository. Use `:force-node-version(18)` to force version 18",
+
+  "packageRules": [
+    {
+      "description": "Force @types/node dependency version",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["node", "@types/node"],
+      "allowedVersions": "{{arg0}}.x"
+    },
+    {
+      "description": "Force Node image version",
+      "matchManagers": ["docker-compose", "dockerfile"],
+      "matchPackageNames": ["node"],
+      "allowedVersions": "{{arg0}}.x"
+    },
+    {
+      "description": "Force devcontainer version",
+      "matchManagers": ["dockerfile"],
+      "matchPackageNames": [
+        "mcr.microsoft.com/vscode/devcontainers/javascript-node"
+      ],
+      "allowedVersions": "0-{{arg0}}-bullseye"
+    },
+    {
+      "description": "Force nvm version",
+      "matchManagers": ["nvm"],
+      "allowedVersions": "{{arg0}}"
+    }
+  ]
+}
