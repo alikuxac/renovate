@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: List all JSON files
         id: list-files
-        run: echo "::set-output name=files::$(ls *.json | jq -R -s -c 'split("\n")[:-1]')"
+        run: |
+          files=$(ls *.json | jq -R -s -c 'split("\n")[:-1]')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
 
   validate-configs:
     name: Validate config ${{ matrix.manifest }}
